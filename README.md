@@ -1,5 +1,10 @@
 # Unit 2 Project - Pokemon App
 
+Written by Mour Wagner
+
+
+### Description
+
 ### Route Table
 
 |             URL       |  REST Route  |    HTTP Verb    |    CRUD Action   |        EJS View(s)      | Created Yet? |
