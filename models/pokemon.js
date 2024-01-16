@@ -4,8 +4,9 @@ const reviewSchema = require('./review.js')
 
 const pkmnSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    type: {type: String, required: true},
+    type: {type: Array, required: true},
     ability: {type: String, required: true},
+    nature: {type: String, default: 'Serious'},
     photo: {type: String, required: true},
     region: {type: String, required: true},
     baseHP: {type: Number, default: 40},

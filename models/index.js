@@ -11,5 +11,6 @@ db.on('connected', function () {
 });
 
 module.exports = {
-    Pokemon: require('./pokemon')
+    Pokemon: require('./pokemon'),
+    seedPokemon: require('./seed')
 };
