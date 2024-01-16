@@ -5,11 +5,19 @@ const path = require('path');
 const express = require('express');
 const livereload = require('livereload');
 const connectLiveReload = require('connect-livereload');
+const methodOverride = require('method-override');
 
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
 const db = require('./models');
+
+
+
+/* Require the routes in the controllers folder
+--------------------------------------------------------------------- */
+// const pkmnCtrl = require('./controllers/pokemon');
+// const reviewCtrl = require('./controllers/review');
 
 
 /* Create the Express app
@@ -38,11 +46,17 @@ app.set('views', path.join(__dirname, 'views'));
 --------------------------------------------------------------- */
 app.use(express.static('public'))
 app.use(connectLiveReload());
+// Body parser: used for POST/PUT/PATCH routes: 
+// this will take incoming strings from the body that are URL encoded and parse them 
+// into an object that can be accessed in the request parameter as a property called body (req.body).
+app.use(express.urlencoded({ extended: true }));
+// Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
+app.use(methodOverride('_method'));
 
 /* Mount routes
 -------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    res.send('Pokemon App')
+    res.render('home')
 });
 
 
@@ -59,6 +73,19 @@ app.get('/seed', function (req, res) {
                     res.json(addedPkmn)
                 })
         })
+});
+
+// // This tells our app to look at the `controllers/pokemon.js` file 
+// // to handle all routes that begin with `localhost:3000/pokemon`
+// app.use('/pokemon', pkmnCtrl);
+// // This tells our app to look at the `controllers/review.js` file 
+// // to handle all routes that begin with `localhost:3000/review`
+// app.use('/review', reviewCtrl);
+
+
+// The "catch-all" route: Runs for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {
+    res.render('404')
 });
 
 /* Tell the app to listen on the specified port
