@@ -1,0 +1,9 @@
+.bkgrd {
+    background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://images7.alphacoders.com/126/1261047.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}

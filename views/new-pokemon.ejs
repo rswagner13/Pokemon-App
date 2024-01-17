@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: `Add New Pokemon | ShinyDex`}) %>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <form class="container">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Pokemon Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="nameAssist" class="form-text">Enter name of the Pokemon you wish to add</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Pokemon Type</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon type(s) your Pokemon has</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Pokemon Ability</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's ability</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Pokemon Nature</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's nature</div>
+            </div>
+            <div class="mb-3">
+                <label for="addPokemonName" class="form-label">Photo of Pokemon</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Provide the url link of the new Pokemon</div>
+            </div>
+            <select class="form-select mb-3" aria-label="Default select example">
+                <option selected>Pokemon Region</option>
+                <option value="1">Kanto</option>
+                <option value="2">Johto</option>
+                <option value="3">Hoenn</option>
+                <option value="4">Sinnoh</option>
+                <option value="5">Unova</option>
+                <option value="6">Kalos</option>
+                <option value="7">Alola</option>
+                <option value="8">Galar</option>
+                <option value="9">Isle of Armor</option>
+                <option value="10">The Crown Tundra</option>
+                <option value="11">Paldea</option>
+                <option value="12">Kitakami</option>
+                <option value="13">Blueberry Academy</option>
+            </select>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base HP Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base HP stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base Attack Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base Attack stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base Defense Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base Defense stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base Special Attack Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base Special Attack stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base Special Defense Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base Special Defense stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="addPokemonName" class="form-label">Base Speed Stat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="pokemonHelp">
+                <div id="typeAssist" class="form-text">Enter the Pokemon's base Speed stat</div>
+            </div>
+        </div>
+    </form>
+
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
