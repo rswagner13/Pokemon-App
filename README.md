@@ -21,12 +21,12 @@ Written by Mour Wagner
 
 |             URL       |  REST Route  |    HTTP Verb    |    CRUD Action   |        EJS View(s)      | Created Yet? |
 | --------------------- | -----------  | --------------- | ---------------- | ----------------------- | ------------ |
-| /                     |              |       GET       |       read       |       index.ejs         |       NO     |
-| / home                |    index     |       GET       |       read       |       index.ejs         |       NO     |
-| /pokemon/:id          |     show     |       GET       |       read       |       pokemon.ejs       |       NO     |
-| /pokemon/add          |     new      |       GET       |                  |       add-pkmn.ejs      |       NO     |
-| /pokemon/:id          |     create   |       POST      |       create     |                         |       NO     |
-| /pokemon/:id/edit     |      edit    |       GET       |       read       |       edit-pkmn.ejs     |       NO     |
+| /                     |              |       GET       |       read       |        home.ejs         |      YES     |
+| / home                |    index     |       GET       |       read       |        home.ejs         |      YES     |
+| /pokemon/:id          |     show     |       GET       |       read       |   pokemon-details.ejs   |      YES     |
+| /pokemon/add          |     new      |       GET       |                  |    new-pokemon.ejs      |      YES     |
+| /pokemon/:id          |     create   |       POST      |       create     |                         |      YES     |
+| /pokemon/:id/edit     |      edit    |       GET       |       read       |    edit-pokemon.ejs     |       NO     |
 | /pokemon/:id          |      update  |    PATCH/PUT    |       update     |                         |       NO     |
 | /pokemon/:id          |     destroy  |     DELETE      |       delete     |                         |       NO     |
 | /review/:id           |     show     |       GET       |       read       |       reviews.ejs       |       NO     |
@@ -36,5 +36,5 @@ Written by Mour Wagner
 | /review/:id           |      update  |    PATCH/PUT    |       update     |                         |       NO     |
 | /review/:id           |     destroy  |    DELETE       |       delete     |                         |       NO     |
 | /seed                 |              |       GET       |  delete & create |                         |       NO     |
-| /about                |              |       GET       |                  |       about.ejs         |       NO     |
+| /about                |              |       GET       |                  |       about.ejs         |      YES     |
 | /*                    |              |       GET       |                  |       404.ejs           |       NO     |  
