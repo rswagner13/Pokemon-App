@@ -76,6 +76,10 @@ app.get('/seed', function (req, res) {
         })
 });
 
+app.get('/about', function (req,res) {
+    res.render('about')
+})
+
 // // This tells our app to look at the `controllers/pokemon.js` file 
 // // to handle all routes that begin with `localhost:3000/pokemon`
 app.use('/pokemon', pkmnCtrl);

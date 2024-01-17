@@ -2,16 +2,48 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `${pokemon.name} | ShinyDex`}) %>
+    <%- include('./partials/head.ejs', {title: `Shiny Pokemon | ShinyDex`}) %>
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><h1>ShinyDex</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/pokemon/new">Add New Pokemon</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="'grid bkgrd">
-        <% for(let pkmn of pokemon) { %>
-            <img src="<%= pkmn.photo %>">
-        <% } %>
+    <div class="container-fluid bkgrd">
+        <div class="row">
+            <% for(let pkmn of pokemon) { %>
+                <div class="card mx-2 my-2" style="width: 18rem;">
+                    <img src="<%= pkmn.photo %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= pkmn.name %></h5>
+                        <p class="card-text">Click the button below to learn more about this Pokemon</p>
+                        <a href="/pokemon/<%= pkmn._id %>" class="btn btn-primary">See more details</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <div class="row">
+
+        </div>
     </div>
 
 

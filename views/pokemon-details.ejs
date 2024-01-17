@@ -6,17 +6,38 @@
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><h1>ShinyDex</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Reviews</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container bkgrd">
+    <div class="container-fluid bkgrd">
         <div class="row">
-            <div class="col-4">
+            <div class="col-md-6 col-sm-12">
                 <img src="<%= pokemon.photo %>">
             </div>
-            <div class="col-4">
-                <p><%= pokemon.name %></p>
-                <p><%= pokemon.ability %></p>
-                <p><%= pokemon.region %></p>
+            <div class="text-box col-6">
+                <h1><%= pokemon.name %></h1>
+                <h4>Type:</h4>
+                    <% for(let i = 0; i < pokemon.type.length; i++) { %>
+                    <span><%= pokemon.type[i] %></span>
+                    <% } %>
+                <p>Ability: <%= pokemon.ability %></p>
+                <p>Region Found: <%= pokemon.region %></p>
             </div>
         </div>
     </div>

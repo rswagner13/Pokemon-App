@@ -28,9 +28,9 @@ router.get('/', (req,res) => {
 });
 
 // Create Route (POST/Create): This route will display the json data of the new Pokemon that was added
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     db.Pokemon.create(req.body)
-        .then(pokemon => res.json(pokemon))
+        .then(pokemon => res.redirect('/pokemon/' + pokemon.id))
 });
 
 // New Route (GET/Read): This route will show that the use is able to access the page that will contain a form for a new Pokemon
