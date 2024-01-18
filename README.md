@@ -29,9 +29,9 @@ Written by Mour Wagner
 | /pokemon/:id/edit     |      edit    |       GET       |       read       |    edit-pokemon.ejs     |      YES     |
 | /pokemon/:id          |      update  |    PATCH/PUT    |       update     |                         |      YES     |
 | /pokemon/:id          |     destroy  |     DELETE      |       delete     |                         |      YES     |
-| /review/:id           |     show     |       GET       |       read       |       reviews.ejs       |       NO     |
-| /review/add           |     new      |       GET       |                  |       add-review.ejs    |       NO     |
-| /review/:id           |     create   |       POST      |       create     |                         |       NO     |
+| /review/:id           |     show     |       GET       |       read       |       reviews.ejs       |      YES     |
+| /review/new           |     new      |       GET       |                  |       add-review.ejs    |      YES     |
+| /review/:id           |     create   |       POST      |       create     |                         |      YES     |
 | /review/:id/edit      |      edit    |       GET       |       read       |       edit-review.ejs   |       NO     |
 | /review/:id           |      update  |    PATCH/PUT    |       update     |                         |       NO     |
 | /review/:id           |     destroy  |    DELETE       |       delete     |                         |       NO     |
