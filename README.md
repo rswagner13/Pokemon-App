@@ -26,15 +26,15 @@ Written by Mour Wagner
 | /pokemon/:id          |     show     |       GET       |       read       |   pokemon-details.ejs   |      YES     |
 | /pokemon/add          |     new      |       GET       |                  |    new-pokemon.ejs      |      YES     |
 | /pokemon/:id          |     create   |       POST      |       create     |                         |      YES     |
-| /pokemon/:id/edit     |      edit    |       GET       |       read       |    edit-pokemon.ejs     |       NO     |
-| /pokemon/:id          |      update  |    PATCH/PUT    |       update     |                         |       NO     |
-| /pokemon/:id          |     destroy  |     DELETE      |       delete     |                         |       NO     |
+| /pokemon/:id/edit     |      edit    |       GET       |       read       |    edit-pokemon.ejs     |      YES     |
+| /pokemon/:id          |      update  |    PATCH/PUT    |       update     |                         |      YES     |
+| /pokemon/:id          |     destroy  |     DELETE      |       delete     |                         |      YES     |
 | /review/:id           |     show     |       GET       |       read       |       reviews.ejs       |       NO     |
 | /review/add           |     new      |       GET       |                  |       add-review.ejs    |       NO     |
 | /review/:id           |     create   |       POST      |       create     |                         |       NO     |
 | /review/:id/edit      |      edit    |       GET       |       read       |       edit-review.ejs   |       NO     |
 | /review/:id           |      update  |    PATCH/PUT    |       update     |                         |       NO     |
 | /review/:id           |     destroy  |    DELETE       |       delete     |                         |       NO     |
-| /seed                 |              |       GET       |  delete & create |                         |       NO     |
+| /seed                 |              |       GET       |  delete & create |                         |      YES     |
 | /about                |              |       GET       |                  |       about.ejs         |      YES     |
 | /*                    |              |       GET       |                  |       404.ejs           |       NO     |  
