@@ -2,16 +2,126 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `Edit ${pokemon.name} Info | ShinyDex`}) %>
+    <%- include('./partials/head.ejs', {title: `Edit ${pokemon.name} | ShinyDex`}) %>
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><h1>ShinyDex</h1></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Reviews</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
 
+    <form class="container" method="POST" action="/pokemon/<%= pokemon._id %>?_method=PUT">
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="name" class="form-label">Pokemon Name</label>
+                <input type="text" class="form-control validate" name="name" value="<%= pokemon.name %>" required>
+                <div id="nameAssist" class="form-text">Edit the name of the Pokemon</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="type" class="form-label">Pokemon Type</label>
+                <select name="type" id="pkmnTypes" class="form-select validate" multiple required>
+                    <% if(pokemon.type.includes("Bug")) { %> <option selected value="Bug">Bug</option><% } else { %><option value="Bug">Bug</option><% } %>
+                    <% if(pokemon.type.includes("Dark")) { %> <option selected value="Dark">Dark</option><% } else { %><option value="Dark">Dark</option><% } %>
+                    <% if(pokemon.type.includes("Dragon")) { %> <option selected value="Dragon">Dragon</option><% } else { %><option value="Dragon">Dragon</option><% } %>
+                    <% if(pokemon.type.includes("Electric")) { %> <option selected value="Electric">Electric</option><% } else { %><option value="Electric">Electric</option><% } %>
+                    <% if(pokemon.type.includes("Fairy")) { %> <option selected value="Fairy">Fairy</option><% } else { %><option value="Fairy">Fairy</option><% } %>
+                    <% if(pokemon.type.includes("Fighting")) { %> <option selected value="Fighting">Fighting</option><% } else { %><option value="Fighting">Fighting</option><% } %>
+                    <% if(pokemon.type.includes("Fire")) { %> <option selected value="Fire">Fire</option><% } else { %><option value="Fire">Fire</option><% } %>
+                    <% if(pokemon.type.includes("Flying")) { %> <option selected value="Flying">Flying</option><% } else { %><option value="Flying">Flying</option><% } %>
+                    <% if(pokemon.type.includes("Ghost")) { %> <option selected value="Ghost">Ghost</option><% } else { %><option value="Ghost">Ghost</option><% } %>
+                    <% if(pokemon.type.includes("Grass")) { %> <option selected value="Grass">Grass</option><% } else { %><option value="Grass">Grass</option><% } %>
+                    <% if(pokemon.type.includes("Ground")) { %> <option selected value="Ground">Ground</option><% } else { %><option value="Ground">Ground</option><% } %>
+                    <% if(pokemon.type.includes("Ice")) { %> <option selected value="Ice">Ice</option><% } else { %><option value="Ice">Ice</option><% } %>
+                    <% if(pokemon.type.includes("Normal")) { %> <option selected value="Normal">Normal</option><% } else { %><option value="Normal">Normal</option><% } %>
+                    <% if(pokemon.type.includes("Poison")) { %> <option selected value="Poison">Poison</option><% } else { %><option value="Poison">Poison</option><% } %>
+                    <% if(pokemon.type.includes("Psychic")) { %> <option selected value="Psychic">Psychic</option><% } else { %><option value="Psychic">Psychic</option><% } %>
+                    <% if(pokemon.type.includes("Rock")) { %> <option selected value="Rock">Rock</option><% } else { %><option value="Rock">Rock</option><% } %>
+                    <% if(pokemon.type.includes("Steel")) { %> <option selected value="Steel">Steel</option><% } else { %><option value="Steel">Steel</option><% } %>
+                    <% if(pokemon.type.includes("Water")) { %> <option selected value="Water">Water</option><% } else { %><option value="Water">Water</option><% } %>
+                </select>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="ability" class="form-label">Pokemon Ability</label>
+                <input type="text" class="form-control validate" id="ability" name="ability" value="<%= pokemon.ability %>" required>
+                <div id="typeAssist" class="form-text">Edit the Pokemon's ability</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="nature" class="form-label">Pokemon Nature</label>
+                <input type="text" class="form-control validate" id="nature" name="nature" value="<%= pokemon.nature %>" required>
+                <div id="typeAssist" class="form-text">Edit the Pokemon's nature</div>
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="form-label">Photo of Pokemon</label>
+                <input type="text" class="form-control validate" id="photo" name="photo" value="<%= pokemon.photo %>" required>
+                <div id="typeAssist" class="form-text">Edit the url link of the new Pokemon</div>
+            </div>
+            <select class="form-select mb-3 validate" name="region" required>
+                <option selected="<% pokemon.region === "Kanto" ? true:false%>" value="Kanto">Kanto</option>
+                <option selected="<% pokemon.region === "Johto" ? true:false%>" value="Johto">Johto</option>
+                <option selected="<% pokemon.region === "Hoenn" ? true:false%>" value="Hoenn">Hoenn</option>
+                <option selected="<% pokemon.region === "Sinnoh" ? true:false%>" value="Sinnoh">Sinnoh</option>
+                <option selected="<% pokemon.region === "Unova" ? true:false%>" value="Unova">Unova</option>
+                <option selected="<% pokemon.region === "Kalos" ? true:false%>" value="Kalos">Kalos</option>
+                <option selected="<% pokemon.region === "Alola" ? true:false%>" value="Alola">Alola</option>
+                <option selected="<% pokemon.region === "Galar" ? true:false%>" value="Galar">Galar</option>
+                <option selected="<% pokemon.region === "Isle of Armor" ? true:false%>" value="Isle of Armor">Isle of Armor</option>
+                <option selected="<% pokemon.region === "The Crown Tundra" ? true:false%>" value="The Crown Tundra">The Crown Tundra</option>
+                <option selected="<% pokemon.region === "Paldea" ? true:false%>" value="Paldea">Paldea</option>
+                <option selected="<% pokemon.region === "Kitakami" ? true:false%>" value="Kitakami">Kitakami</option>
+                <option selected="<% pokemon.region === "Blueberry Acadamy" ? true:false%>" value="Blueberry Acadamy">Blueberry Academy</option>
+            </select>
+            <div class="mb-3 col-md-6">
+                <label for="baseHP" class="form-label">Base HP Stat</label>
+                <input type="number" class="form-control" name="baseHP" value="<%= pokemon.baseHP %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base HP stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="baseATT" class="form-label">Base Attack Stat</label>
+                <input type="number" class="form-control" name="baseATT" value="<%= pokemon.baseATT %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base Attack stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="baseDEF" class="form-label">Base Defense Stat</label>
+                <input type="number" class="form-control" name="baseDEF" value="<%= pokemon.baseDEF %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base Defense stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="baseSPATT" class="form-label">Base Special Attack Stat</label>
+                <input type="number" class="form-control" name="baseSPATT" value="<%= pokemon.baseSPATT %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base Special Attack stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="baseSPDEF" class="form-label">Base Special Defense Stat</label>
+                <input type="number" class="form-control" name="baseSPDEF" value="<%= pokemon.baseSPDEF %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base Special Defense stat</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="baseSPEED" class="form-label">Base Speed Stat</label>
+                <input type="number" class="form-control" name="baseSPD" value="<%= pokemon.baseSPD %>">
+                <div id="typeAssist" class="form-text">Edit the Pokemon's base Speed stat</div>
+            </div>
+            <button class="btn btn-primary" value="Create New Pokemon" type="submit">Submit</button>
+        </div>
+    </form>
 
 
     <%- include('./partials/footer.ejs') %>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>

@@ -37,7 +37,27 @@
                     <span><%= pokemon.type[i] %></span>
                     <% } %>
                 <p>Ability: <%= pokemon.ability %></p>
+                <p>Nature: <%= pokemon.nature %></p>
                 <p>Region Found: <%= pokemon.region %></p>
+                <p>Base HP: <%= pokemon.baseHP %></p>
+                <p>Base Attack: <%= pokemon.baseATT %></p>
+                <p>Base Defense: <%= pokemon.baseDEF %></p>
+                <p>Base Special Attack: <%= pokemon.baseSPATT %></p>
+                <p>Base Special Defense: <%= pokemon.baseSPDEF %></p>
+                <p>Base Speed: <%= pokemon.baseSPD %></p>
+                <div class="container">
+                    <div class="row">
+                        <form class="col-3">
+                            <button type="button" class="btn btn-primary"><a class="button-details" href="/pokemon/<%= pokemon._id %>/edit">Edit</a></button>
+                        </form>
+                        <form class="col-3">
+                            <button type="button" class="btn btn-primary"><a class="button-details" href="#">Add Review</a></button>
+                        </form>
+                        <form method="POST" action="/pokemon/<%= pokemon._id %>?_method=DELETE" class="col-3">
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

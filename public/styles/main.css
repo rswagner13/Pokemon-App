@@ -7,3 +7,8 @@
 .navbar-collapse {
     flex-grow: 0;
 }
+
+.button-details {
+    text-decoration: none;
+    color: white;
+}

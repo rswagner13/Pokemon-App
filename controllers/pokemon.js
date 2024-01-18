@@ -52,7 +52,7 @@ router.get('/:id', (req, res) => {
 // showing the edits were made
 router.put('/:id', (req, res) => {
     db.Pokemon.findByIdAndUpdate(req.params.id, req.body, { new: true })
-        .then(pokemon => res.json(pokemon))
+        .then(pokemon => res.redirect('/pokemon/' + pokemon.id))
 });
 
 // Destroy Route (DELETE/Delete): This route deletes a pokemon document using the 
@@ -60,11 +60,14 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     db.Pokemon.findByIdAndDelete(req.params.id)
         .then(res.redirect('/pokemon'))
-})
+});
 
 // Edit Route (GET/Read): This route renders a form the user
 // will use to PUT (edit) properties of an existing pokemon
-
+router.get('/:id/edit', function (req, res) {
+    db.Pokemon.findById(req.params.id)
+        .then(pokemon => res.render('edit-pokemon', {pokemon: pokemon}))
+});
 
 
 /* Export these routes so that they are accessible in `server.js`
