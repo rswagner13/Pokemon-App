@@ -51,7 +51,7 @@
                             <button type="button" class="btn btn-primary"><a class="button-details" href="/pokemon/<%= pokemon._id %>/edit">Edit</a></button>
                         </form>
                         <form class="col-3">
-                            <button type="button" class="btn btn-primary"><a class="button-details" href="#">Add Review</a></button>
+                            <button type="button" class="btn btn-primary"><a class="button-details" href="/review/new/<%= pokemon._id %>">Add Review</a></button>
                         </form>
                         <form method="POST" action="/pokemon/<%= pokemon._id %>?_method=DELETE" class="col-3">
                             <button type="submit" class="btn btn-primary">Delete</button>

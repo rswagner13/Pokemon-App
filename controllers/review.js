@@ -19,8 +19,17 @@ const db = require('../models');
 ---------------------------------------------------------------- */
 router.get('/', (req, res) => {
     res.send("Reviews Page will be here")
-})
+});
 
+router.get('/new/:pokemonId', (req,res) => {
+    db.Pokemon.findById(req.params.pokemonId)
+        .then(pokemon => res.render('new-review', {pokemon:pokemon}))
+});
+
+router.post('/create/:pokemonId', (req,res) => {
+    db.Pokemon.findByIdAndUpdate(req.params.pokemonId, {$push: {reviews: req.body}},{new:true})
+        .then(pokemon => res.redirect('/review'))
+})
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */
