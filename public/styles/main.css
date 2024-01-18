@@ -12,3 +12,7 @@
     text-decoration: none;
     color: white;
 }
+
+.pkmn-details {
+    overflow-y: scroll; 
+}
