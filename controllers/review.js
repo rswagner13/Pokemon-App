@@ -13,7 +13,6 @@ const router = express.Router();
 /* Require the db connection, and models
 --------------------------------------------------------------- */
 const db = require('../models');
-const reviewSchema = require('../models/review');
 
 
 /* Routes

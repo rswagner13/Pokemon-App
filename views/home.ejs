@@ -3,10 +3,11 @@
 
 <head>
     <%- include('./partials/head.ejs', {title: `ShinyDex Home`}) %>
+    <link rel="stylesheet" href="/styles/home.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary header">
         <div class="container-fluid">
             <h1 class="pageTitle">ShinyDex</h1>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,7 +41,7 @@
                     </div>
                 </div>
             </div>
-                <div class="card col-sm-3 mx-2 my-2" style="width: 18rem;">
+                <div class="card col-sm-3 mx-auto my-auto" style="width: 15rem; height: 26rem">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Pokemon</h5>
@@ -48,7 +49,7 @@
                         <a href="/pokemon" class="btn btn-primary">Go to Pokemon page</a>
                     </div>
                 </div>
-                <div class="card col-sm-3 mx-2 my-2" style="width: 18rem;">
+                <div class="card col-sm-3 mx-auto my-auto" style="width: 15rem; height: 26rem;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Reviews</h5>

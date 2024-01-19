@@ -4,6 +4,10 @@
     background-repeat: no-repeat;
 }
 
+.header {
+    background: url('../assets/Test.png') 
+}
+
 .navbar-collapse {
     flex-grow: 0;
 }
