@@ -4,6 +4,10 @@
     background-repeat: no-repeat;
 }
 
+.pageTitle {
+    font-size: 56px;
+}
+
 .header {
     background: url('../assets/Test.png') 
 }
@@ -17,6 +21,23 @@
     color: white;
 }
 
-.pkmn-details {
-    overflow-y: scroll; 
+.card{
+    border: 3px solid rgb(152,214,236);
+}
+
+.text-box {
+    background-color: rgb(255,255,255,0.5);
+    height: 650px;
+}
+
+.text-row {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 180px;
+}
+
+.text-row p {
+    font-size: 20px;
+    margin-bottom: 0px;
 }

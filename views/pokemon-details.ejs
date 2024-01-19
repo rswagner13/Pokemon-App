@@ -30,15 +30,23 @@
             <div class="col-md-6 col-sm-12">
                 <img src="<%= pokemon.photo %>">
             </div>
-            <div class="text-box col-6">
+            <div class="text-box overflow-scroll text-center mx-auto my-auto col-6">
                 <div class="pkmn-details">
-                    <h1><%= pokemon.name %></h1>
-                    <h4>Type:</h4>
-                    <% for(let i = 0; i < pokemon.type.length; i++) { %>
-                    <span><%= pokemon.type[i] %></span>
-                    <% } %>
-                    <p>Ability: <%= pokemon.ability %></p>
-                    <p>Nature: <%= pokemon.nature %></p>
+                    <h1 class="display-4"><%= pokemon.name %></h1>
+                    <h4 class="mx-auto my-auto">Type</h4>
+                    <div class="text-row">
+                        <% for(let i = 0; i < pokemon.type.length; i++) { %>
+                        <p class="mx-auto"><%= pokemon.type[i] %></p>
+                        <% } %>
+                    </div>
+                    <h4>Ability</h4> 
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.ability %></p>
+                    </div>
+                    <h4>Nature</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.nature %></p>
+                    </div>
                     <p>Region Found: <%= pokemon.region %></p>
                     <p>Base HP: <%= pokemon.baseHP %></p>
                     <p>Base Attack: <%= pokemon.baseATT %></p>
@@ -47,6 +55,7 @@
                     <p>Base Special Defense: <%= pokemon.baseSPDEF %></p>
                     <p>Base Speed: <%= pokemon.baseSPD %></p>
                 </div>
+                <h1 class="display-4">Reviews</h1>
                 <% for(let i = 0; i < pokemon.reviews.length; i++) { %>
                 <p>Username: <%= pokemon.reviews[i].username %></p>
                 <p>Review Title: <%= pokemon.reviews[i].title %></p>
