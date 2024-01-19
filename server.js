@@ -25,17 +25,6 @@ const reviewCtrl = require('./controllers/review');
 const app = express();
 
 
-/* Configure the app to refresh the browser when nodemon restarts
---------------------------------------------------------------- */
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once("connection", () => {
-    // wait for nodemon to fully restart before refreshing the page
-    setTimeout(() => {
-        liveReloadServer.refresh("/");
-    }, 100);
-});
-
-
 /* Configure the app (app.set)
 --------------------------------------------------------------- */
 app.set('view engine', 'ejs');
@@ -44,14 +33,27 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middleware (app.use)
 --------------------------------------------------------------- */
-app.use(express.static('public'))
-app.use(connectLiveReload());
+// Detect if running in a dev environment
+if (process.env.ON_HEROKU === 'false') {
+    // Configure the app to refresh the browser when nodemon restarts
+    const liveReloadServer = livereload.createServer();
+    liveReloadServer.server.once("connection", () => {
+        // wait for nodemon to fully restart before refreshing the page
+        setTimeout(() => {
+        liveReloadServer.refresh("/");
+        }, 100);
+    });
+    app.use(connectLiveReload());
+}
+
 // Body parser: used for POST/PUT/PATCH routes: 
 // this will take incoming strings from the body that are URL encoded and parse them 
 // into an object that can be accessed in the request parameter as a property called body (req.body).
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'))
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
+
 
 /* Mount routes
 -------------------------------------------------------------- */
@@ -62,19 +64,21 @@ app.get('/', function (req, res) {
 
 
 // When a GET request is sent to `/seed`, the pets collection is seeded
-app.get('/seed', function (req, res) {
-    // Remove any existing pets
-    db.Pokemon.deleteMany({})
-        .then(removePkmn => {
-            console.log(`Removed ${removePkmn.deletedCount} pokemon`)
-            // Seed the pets collection with the seed data
-            db.Pokemon.insertMany(db.seedPokemon)
-                .then(addedPkmn => {
-                    console.log(`Added ${addedPkmn.length} pokemon to be added to database`)
-                    res.json(addedPkmn)
-                })
-        })
-});
+if(process.env.ON_HEROKU === 'false') {
+    app.get('/seed', function (req, res) {
+        // Remove any existing pets
+        db.Pokemon.deleteMany({})
+            .then(removePkmn => {
+                console.log(`Removed ${removePkmn.deletedCount} pokemon`)
+                // Seed the pets collection with the seed data
+                db.Pokemon.insertMany(db.seedPokemon)
+                    .then(addedPkmn => {
+                        console.log(`Added ${addedPkmn.length} pokemon to the database`)
+                        res.json(addedPkmn)
+                    })
+            })
+    });
+}
 
 app.get('/about', function (req,res) {
     res.render('about')
