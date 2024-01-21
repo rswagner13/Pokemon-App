@@ -15,17 +15,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Reviews</a>
+                    <a class="nav-link active" href="/review">Reviews</a>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
 
-    <form class="container" method="POST" action="/review/create/<%= pokemon._id %>">
+    <form class="container-fluid bkgrd" method="POST" action="/review/create/<%= pokemon._id %>">
         <div class="row">
             <div class="mb-3 col-md-6">
                 <label for="name" class="form-label">Username</label>

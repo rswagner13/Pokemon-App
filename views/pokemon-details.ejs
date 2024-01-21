@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    <a class="nav-link active" aria-current="page" href="/pokemon">Pokemon Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/review">Reviews</a>
@@ -39,28 +39,61 @@
                         <p class="mx-auto"><%= pokemon.type[i] %></p>
                         <% } %>
                     </div>
-                    <h4>Ability</h4> 
+                    <h4 class="mx-auto my-auto">Ability</h4> 
                     <div class="text-row">
                         <p class="mx-auto"><%= pokemon.ability %></p>
                     </div>
-                    <h4>Nature</h4>
+                    <h4 class="mx-auto my-auto">Nature</h4>
                     <div class="text-row">
                         <p class="mx-auto"><%= pokemon.nature %></p>
                     </div>
-                    <p>Region Found: <%= pokemon.region %></p>
-                    <p>Base HP: <%= pokemon.baseHP %></p>
-                    <p>Base Attack: <%= pokemon.baseATT %></p>
-                    <p>Base Defense: <%= pokemon.baseDEF %></p>
-                    <p>Base Special Attack: <%= pokemon.baseSPATT %></p>
-                    <p>Base Special Defense: <%= pokemon.baseSPDEF %></p>
-                    <p>Base Speed: <%= pokemon.baseSPD %></p>
+                    <h4 class="mx-auto my-auto">Region Found</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.region %></p>
+                    </div> 
+                    <h4 class="mx-auto my-auto">Base HP</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseHP %></p>
+                    </div>
+                    <h4 class="mx-auto my-auto">Base Attack</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseATT %></p>
+                    </div>
+                    <h4 class="mx-auto my-auto">Base Defense</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseDEF %></p>
+                    </div>
+                    <h4 class="mx-auto my-auto">Base Special Attack</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseSPATT %></p>
+                    </div>
+                    <h4 class="mx-auto my-auto">Base Special Defense</h4>
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseSPDEF %></p>
+                    </div>
+                    <h4 class="mx-auto my-auto">Base Speed</h4> 
+                    <div class="text-row">
+                        <p class="mx-auto"><%= pokemon.baseSPD %></p>
+                    </div>
                 </div>
                 <h1 class="display-4">Reviews</h1>
                 <% for(let i = 0; i < pokemon.reviews.length; i++) { %>
-                <p>Username: <%= pokemon.reviews[i].username %></p>
-                <p>Review Title: <%= pokemon.reviews[i].title %></p>
-                <p>Comment: <%= pokemon.reviews[i].comment %></p>
-                <p>Date Posted: <%= pokemon.reviews[i].commentDate %></p>
+                <h4 class="mx-auto my-auto">Username</h4>
+                <div class="text-row">
+                    <p class="mx-auto"><%= pokemon.reviews[i].username %></p>
+                </div>
+                <h4 class="mx-auto my-auto">Review Title</h4>
+                <div class="text-row">
+                    <p class="mx-auto"><%= pokemon.reviews[i].title %></p>
+                </div>
+                <h4 class="mx-auto my-auto">Comment</h4>
+                <div class="text-row">
+                    <p class="mx-auto comment"><%= pokemon.reviews[i].comment %></p>
+                </div>
+                <h4 class="mx-auto my-auto">Date Posted</h4>
+                <div class="text-row">
+                    <p class="mx-auto comment"><%= pokemon.reviews[i].commentDate %></p>
+                </div>
                 <% } %>
             </div>
             <div class="container">

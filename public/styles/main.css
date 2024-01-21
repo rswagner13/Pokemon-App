@@ -9,7 +9,7 @@
 }
 
 .header {
-    background: url('../assets/Test.png') 
+    background-color: rgb(34,123,232)
 }
 
 .navbar-collapse {
@@ -34,10 +34,16 @@
     display: inline-flex;
     flex-direction: row;
     align-items: flex-end;
-    width: 180px;
+    width: 200px;
+}
+
+h4 {
+    font-size: 30px;
 }
 
 .text-row p {
+    color: rgb(2, 134, 250);
     font-size: 20px;
     margin-bottom: 0px;
+    font-weight: bold;
 }

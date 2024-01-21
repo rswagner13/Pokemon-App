@@ -15,21 +15,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/about">About</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link active" href="/pokemon">Pokemon</a>
                 </li>
             </ul>
             </div>
         </div>
     </nav>
-    <div>
+    <div class="bkgrd">
         <% for (let review of reviews) { %>
-            <p><%= review.username %></p>
-            <p><%= review.title %></p>
-            <p><%= review.comment %></p>
-            <p><%= review.commentDate %></p>
+            <div class="text-row">
+                <p><%= review.username %></p>
+            </div>
+            <p class="mx-auto">Title: <%= review.title %></p>
+            <p class="mx-auto">Comment: <%= review.comment %></p>
+            <p class="mx-auto">Date Posted: <%= review.commentDate %></p>
             <form method="POST" action="/review/<%= review._id %>?_method=DELETE">
                 <button type="submit" class="btn btn-warning">Delete</button>
             </form>

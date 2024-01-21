@@ -80,9 +80,6 @@ if(process.env.ON_HEROKU === 'false') {
     });
 }
 
-app.get('/about', function (req,res) {
-    res.render('about')
-})
 
 // // This tells our app to look at the `controllers/pokemon.js` file 
 // // to handle all routes that begin with `localhost:3000/pokemon`
@@ -90,12 +87,6 @@ app.use('/pokemon', pkmnCtrl);
 // // This tells our app to look at the `controllers/review.js` file 
 // // to handle all routes that begin with `localhost:3000/review`
 app.use('/review', reviewCtrl);
-
-
-// The "catch-all" route: Runs for any other URL that doesn't match the above routes
-// app.get('*', function (req, res) {
-//     res.render('404')
-// });
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
