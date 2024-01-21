@@ -1,9 +1,51 @@
-# Unit 2 Project - Pokemon App
+<h1 align="center">
+  Unit 2 Project - Pokemon App
+</h1>
 
-Written by Mour Wagner
+<h3 align=center>
+  Written by Mour Wagner
+</h3>
+<p align = "center">
+  <a href="mailto: mourwagner13@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="My Email">
+  </a>
+  <a href="https://rswagner13.github.io/Portfolio/">
+    <img src="https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="My Website">
+  </a>
+  <a href="https://github.com/rswagner13">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile">
+  </a>
+  <a href="https://www.linkedin.com/in/rswagner23/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt"LinkedIn Page">
+  </a>
+</p>
 
 
 ### Description
+---
+<p align="center">
+  This is a full-stack MEN app that allows users to add any shiny Pokemon they want, and 
+</p>
+
+### ⬇️ Installation
+Since this is a website, there's nothing to install in order to access this.
+
+
+### 🖥️ Technologies Used
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js">
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+  <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown">
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+</p>
+
+### 🧔‍♂️👩 User Stories
+* As a hiring manager for a software development team, I want to review a prospect's full stack application to assess their skills and experience to see if they would be an asset to our team.
+* As an avid Pokemon fan, I love the thought of having an app that would allow me to add Pokemon, make changes if needed, as well as write reviews for them
 
 <details>
   <summary>
@@ -36,3 +78,12 @@ Written by Mour Wagner
 | /seed                 |              |       GET       |  delete & create |                         |      YES     |
 | /about                |              |       GET       |                  |       about.ejs         |      YES     |
 | /*                    |              |       GET       |                  |       404.ejs           |       NO     |  
+
+### ⚠️❌💫 Unsolved Problems/Major Hurtles
+---
+* Holding Spot
+
+### ▶️ Next Steps
+---
+* Leveraging the PokeAPI to obtain Pokemon information, rather than having the user manually enter the Pokemon into the app.
+* 
