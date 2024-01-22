@@ -28,7 +28,17 @@
 </p>
 
 ### ⬇️ Installation
-Since this is a website, there's nothing to install in order to access this.
+Since this is a website, there's nothing to install in order to access this. If you're interested in modifying the site, I would follow the next steps to install all the packages you need:
+* Install NPM by running the following command in the terminal:
+  ```npm init -y```
+* Then install the following dependencies:
+  ```npm i express ejs mongoose dotenv livereload connect-livereload```
+* Add an ```.env``` file to the root of the application, and add the following code within it:
+```
+PORT=3000
+MONGOBDURI='your connection string here'
+```
+* 
 
 
 ### 🖥️ Technologies Used
