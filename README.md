@@ -24,7 +24,7 @@
 ### Description
 ---
 <p align="center">
-  This is a full-stack MEN app that allows users to add any shiny Pokemon they want, and 
+  This is a full-stack MEN app that allows users to add any shiny Pokemon they want to it, as well as add reviews of what they think about each Pokemon
 </p>
 
 ### ⬇️ Installation
@@ -36,9 +36,20 @@ Since this is a website, there's nothing to install in order to access this. If 
 * Add an ```.env``` file to the root of the application, and add the following code within it:
 ```
 PORT=3000
-MONGOBDURI='your connection string here'
+MONGOBDURI='your connection string here from MongoDB Atlas'
 ```
-* 
+* If you want the server to auto restart when changes are made to eithe EJS or CSS files, add the following aurgument to the ```package.json``` file:
+```nodemon server.js -e css,ejs,js,json```
+It should be placed within the "scripts" portion, and "scripts" should now look like this:
+```
+"scripts": {
+  "test": "echo \"Error: not test specified\" && exit 1",
+  "start": "node server.js",
+  "dev": "nodemon server.js -e css,ejs,js,json"
+},
+```
+* Run the following command to install method-override:
+```npm i method-override```
 
 
 ### 🖥️ Technologies Used
@@ -91,9 +102,11 @@ MONGOBDURI='your connection string here'
 
 ### ⚠️❌💫 Unsolved Problems/Major Hurtles
 ---
-* Holding Spot
+* There are still parts of Bootstrap that I need to look further into in order to fully understand how to use it to make my website as responsive as I want it to be
+* 
 
 ### ▶️ Next Steps
 ---
 * Leveraging the PokeAPI to obtain Pokemon information, rather than having the user manually enter the Pokemon into the app.
+* Have an option to switch between normal/shiny sprites so that users can tell the difference between the two.
 * 
