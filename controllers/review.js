@@ -39,9 +39,10 @@ router.get('/new/:pokemonId', (req,res) => {
 // POST route to add the review to the Pokemon document base on it's Object id
 router.post('/create/:pokemonId', (req,res) => {
     db.Pokemon.findByIdAndUpdate(req.params.pokemonId, {$push: {reviews: req.body}},{new:true})
-        .then(pokemon => res.redirect('/review'))
+        .then(pokemon => res.redirect('/pokemon'))
 });
 
+// DELETE route that will delete a review for a Pokemon
 router.delete('/:id', (req,res) => {
     db.Pokemon.findOneAndUpdate(
         {'reviews._id': req.params.id}, 

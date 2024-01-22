@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/pokemon">Pokemon</a>
+                    <a class="nav-link" href="/pokemon">Pokemon</a>
                 </li>
             </ul>
             </div>
@@ -26,11 +26,14 @@
             <div class="text-row">
                 <p><%= review.username %></p>
             </div>
-            <p class="mx-auto">Title: <%= review.title %></p>
-            <p class="mx-auto">Comment: <%= review.comment %></p>
-            <p class="mx-auto">Date Posted: <%= review.commentDate %></p>
+            <div class="review-text-box">
+                <p class=" mx-auto">Title: <%= review.title %></p>
+                <p class="mx-auto">Comment: <%= review.comment %></p>
+                <p class="mx-auto">Date Posted: <%= review.commentDate %></p>
+            </div>
+            
             <form method="POST" action="/review/<%= review._id %>?_method=DELETE">
-                <button type="submit" class="btn btn-warning">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         <% } %>
     </div>
