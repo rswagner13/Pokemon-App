@@ -1,5 +1,5 @@
 <h1 align="center">
-  Unit 2 Project - Pokemon App
+  Unit 2 Project - ShinyDex
 </h1>
 
 <h3 align=center>
