@@ -21,11 +21,15 @@
 </p>
 
 
-### Description
+### 📝Description
 ---
 <p align="center">
   This is a full-stack MEN app that allows users to add any shiny Pokemon they want to it, as well as add reviews of what they think about each Pokemon
 </p>
+
+<h3 align=center>
+  🔗Link to App: https://shinydex-a670e3a229b5.herokuapp.com/
+</h3>
 
 ### ⬇️ Installation
 Since this is a website, there's nothing to install in order to access this. If you're interested in modifying the site, I would follow the next steps to install all the packages you need:
@@ -80,6 +84,17 @@ It should be placed within the "scripts" portion, and "scripts" should now look 
   <img src="https://media.git.generalassemb.ly/user/51566/files/e995d625-a116-4b8c-9883-db64ac906f81">
 </details>
 
+<details>
+  <summary>
+    <h3>Screenshots of App</h3>
+  </summary>
+  <img src="https://github.com/rswagner13/Pokemon-App/assets/152703739/f9468ee6-769f-426c-b91a-9297bc36fd0c">
+  <img src="https://github.com/rswagner13/Pokemon-App/assets/152703739/a72aca6a-efcc-4e9e-a00f-66391dd1baa6">
+  <img src="https://github.com/rswagner13/Pokemon-App/assets/152703739/8753e329-964b-4cb0-b266-0490984f5c03">
+  <img src="https://github.com/rswagner13/Pokemon-App/assets/152703739/3b3e6b52-0d3e-4fe3-8a4a-90b28a5979dc">
+  <img src="https://github.com/rswagner13/Pokemon-App/assets/152703739/ead386af-6efa-46f6-9ba4-29fffcb2ea65">
+</details>
+
 ### Route Table
 
 |             URL       |  REST Route  |    HTTP Verb    |    CRUD Action   |        EJS View(s)      | Created Yet? |
@@ -97,16 +112,13 @@ It should be placed within the "scripts" portion, and "scripts" should now look 
 | /review/:id           |     create   |       POST      |       create     |                         |      YES     |
 | /review/:id           |     destroy  |    DELETE       |       delete     |                         |      YES     |
 | /seed                 |              |       GET       |  delete & create |                         |      YES     |
-| /about                |              |       GET       |                  |       about.ejs         |      YES     |
-| /*                    |              |       GET       |                  |       404.ejs           |       NO     |  
 
 ### ⚠️❌💫 Unsolved Problems/Major Hurtles
 ---
-* There are still parts of Bootstrap that I need to look further into in order to fully understand how to use it to make my website as responsive as I want it to be
-* 
+* Parts of Bootstrap that I need to review to fully understand how to use it and make my app responsive the way I want it to be.
+* Difficulty repopulating form data for "Types" since the majority of Pokemon have more than one type.
 
 ### ▶️ Next Steps
 ---
 * Leveraging the PokeAPI to obtain Pokemon information, rather than having the user manually enter the Pokemon into the app.
 * Have an option to switch between normal/shiny sprites so that users can tell the difference between the two.
-* 
